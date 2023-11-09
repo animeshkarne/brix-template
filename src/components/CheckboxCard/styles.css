@@ -1,0 +1,15 @@
+.chekboxcard{
+   width: 80%;
+    padding: 20px;
+    border: 1px solid lightgray;
+    box-shadow: inset 0 0 2px lightgray;
+    border-radius: 10px;
+    
+}
+.checkboxinput{
+    width: 10px;
+    margin-left: 0px;
+}
+.checkboxlabel{
+    margin: 0px;
+}
