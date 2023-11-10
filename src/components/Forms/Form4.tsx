@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/types';
 import axios from 'axios';
+
 interface Form4Props {
 
 }
@@ -54,6 +55,7 @@ const Form4: React.FC<Form4Props> = () => {
       });
 
       console.log("Success:", response.data);
+      alert("Submitted Successfully !")
       return response;
     } catch (error: any) {
       console.error(
