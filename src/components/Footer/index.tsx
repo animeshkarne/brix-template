@@ -16,6 +16,7 @@ function Footer() {
             buttonTrue='true'
             imgPath=''
             buttonText='Subscribe'
+            onChange={(value:string)=>{}}
         />
       </div>
     </div>

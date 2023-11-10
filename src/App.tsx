@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import Form2 from './components/Forms/Form2';
 import Form3 from './components/Forms/Form3';
 import Form4 from './components/Forms/Form4';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/types';
 
 interface AppProps {
   // Define any props your App component expects here
@@ -15,7 +17,22 @@ interface AppProps {
 const App: React.FC<AppProps> = () => {
 
   const [step, setStep] = useState<number>(1);
+  const [formValid, setFormValid] = useState<boolean>(false);
+  const [isNext,setIsNext] = useState<boolean>(false);
 
+  const form = useSelector((state: RootState) => state.form);
+
+
+  const nextBtnHandler = () => { 
+    setIsNext(true)
+    if(formValid){
+      setStep((prev)=>prev+1);
+      console.log(form);
+      setIsNext(false);
+      setFormValid(false);
+    }
+    setFormValid(false);
+  }
 
   return (
     <div className="App">
@@ -29,7 +46,10 @@ const App: React.FC<AppProps> = () => {
         <div className="form-body">
           <div className='progress-bar-container'><ProgressBar currentStep={step}/></div>
           <hr />
-          {step == 1 && (<Form1 />)}{step == 2 && (<Form2 />)}{step == 3 && (<Form3 />)}{step == 4 && (<Form4 />)}
+          {step == 1 && (<Form1 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext}/>)}
+          {step == 2 && (<Form2 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext}/>) }
+          {step == 3 && (<Form3 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext}/>)}
+          {step == 4 && (<Form4 />)}
         </div>
         <div className='navigate-btns' >
           {step !== 1 && (
@@ -41,7 +61,7 @@ const App: React.FC<AppProps> = () => {
           {step !== 4 && (
             <Button
               text='Next Step'
-              onClick={() => { setStep((prev)=>prev+1)}}
+              onClick={nextBtnHandler}
             />
           )}
         </div>

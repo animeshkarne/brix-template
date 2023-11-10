@@ -14,7 +14,7 @@ const CheckboxCard:React.FC<CheckboxProps> = ({ label, onChange, checked }) => {
         <input
           type="radio"
           checked={checked} 
-          onChange={(e) => onChange(e.target.checked)}
+          onChange={(e) => {onChange(e.target.checked)}}
           className='checkboxinput'
           name='budget'
         />
