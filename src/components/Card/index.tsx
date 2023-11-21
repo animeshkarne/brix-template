@@ -9,7 +9,7 @@ interface CardProps{
   
 const Card:React.FC<CardProps> = ({imgPath,text,onClick}) => {
   return (
-    <div className='card' onClick={()=>{onClick(text)}}>
+    <div className='card' onClick={()=>{onClick(text)}} id={text}>
         <img src={imgPath} alt="card-image" />
         <p>{text}</p>
     </div>

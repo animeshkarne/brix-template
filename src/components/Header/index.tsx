@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className='header'>
       <div className='logo'>
-        <img src={logoImage} alt="logo-image" height={20} />
+        <img src={logoImage} alt="logo-image" height={25} />
       </div>
       <div>
         <Button text="Clone now" />

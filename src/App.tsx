@@ -23,15 +23,15 @@ const App: React.FC<AppProps> = () => {
   const form = useSelector((state: RootState) => state.form);
 
 
-  const nextBtnHandler = () => { 
-    setIsNext(true)
-    if(formValid){
-      setStep((prev)=>prev+1);
-      console.log(form);
-      setIsNext(false);
-      setFormValid(false);
-    }
-    setFormValid(false);
+  const nextBtnHandler = () => {
+    setIsNext(true) 
+    // if( formValid){
+    //   setStep((prev)=>prev+1);
+      
+    //   setIsNext(false);
+    //   setFormValid(false);
+    // }
+    // setFormValid(false);
   }
 
   return (
@@ -46,9 +46,9 @@ const App: React.FC<AppProps> = () => {
         <div className="form-body">
           <div className='progress-bar-container'><ProgressBar currentStep={step}/></div>
           <hr />
-          {step == 1 && (<Form1 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext}/>)}
-          {step == 2 && (<Form2 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext}/>) }
-          {step == 3 && (<Form3 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext}/>)}
+          {step == 1 && (<Form1 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext} setStep={setStep}/>)}
+          {step == 2 && (<Form2 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext} setStep={setStep}/>) }
+          {step == 3 && (<Form3 setFormValid={setFormValid} setIsNext={setIsNext} isNext={isNext} setStep={setStep}/>)}
           {step == 4 && (<Form4 />)}
         </div>
         <div className='navigate-btns' >

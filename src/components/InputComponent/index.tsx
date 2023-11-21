@@ -8,20 +8,23 @@ interface InputComponentProps {
     imgPath?: string;
     buttonTrue?: string;
     buttonText?: string;
-    onChange:Function
+    onChange:Function;
+    onClick?: () => void; 
+    value?:string
 }
 
-const InputComponent: React.FC<InputComponentProps> = ({ type, placeholder, imgPath, buttonTrue, buttonText = 'DefaultText',onChange }) => {
+const InputComponent: React.FC<InputComponentProps> = ({ value,onClick,type, placeholder, imgPath, buttonTrue, buttonText = 'DefaultText',onChange }) => {
     return (
         <div className='input'>
             <input type={type} placeholder={placeholder} className='input__box'  
                 onChange={(e)=>{onChange(e.target.value)}}
+                value={value}
             />
             {imgPath != '' && <img src={imgPath} alt="input-image" className='input-image' />}
             {
                 buttonTrue == 'true' && (
                     <div className='input-image' style={{marginRight:'70px',marginTop:'10px'}}>
-                        <Button text={buttonText} />
+                        <Button text={buttonText} onClick={onClick}/>
                     </div>
                 )
             }

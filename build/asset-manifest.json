@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/brix-template/static/css/main.74d4179d.css",
+    "main.js": "/brix-template/static/js/main.cc4e72e7.js",
+    "static/media/Logo.jpeg": "/brix-template/static/media/Logo.d9d1563e94e2dbde3a65.jpeg",
+    "index.html": "/brix-template/index.html",
+    "main.74d4179d.css.map": "/brix-template/static/css/main.74d4179d.css.map",
+    "main.cc4e72e7.js.map": "/brix-template/static/js/main.cc4e72e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74d4179d.css",
+    "static/js/main.cc4e72e7.js"
+  ]
+}
